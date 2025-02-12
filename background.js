@@ -10,7 +10,7 @@ chrome.action.onClicked.addListener((activeTab) => {
   }
 
   const baseURL = activeURL.slice(0, pos + 4);
-  if (!(baseURL.includes("salesforce.com") || baseURL.includes("force.com"))) {
+  if (!(baseURL.includes("salesforce.com") || baseURL.includes("force.com") || baseURL.includes("salesforce-setup.com"))) {
     chrome.scripting.executeScript({
       target: { tabId: activeTab.id },
       function: () => alert('This Extension cannot be used on this website')
